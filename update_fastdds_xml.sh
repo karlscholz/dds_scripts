@@ -4,7 +4,7 @@
 output_xml="$HOME/dds_scripts/fastdds_tailscale_simple.xml"
 
 # Set debug mode (true or false)
-debug=true
+debug=false
 
 # Function to handle debug output
 debug_echo() {
@@ -69,7 +69,7 @@ done
 
 # Check if any IP addresses were found
 if [ -z "$locator_entries" ]; then
-    echo "Error: No IP addresses found. XML file not updated."
+    echo "Error in ~/dds_scripts/update_fastdds_xml.sh: No Tailscale IP addresses found. \n    -> FastDDS XML file NOT updated!\n    -> Tailscale NOT available!"
 else
     ip_count=$(echo "$ip_addresses" | wc -w)
     debug_echo "$ip_count valid IP addresses found."
