@@ -69,7 +69,7 @@ done
 
 # Check if any IP addresses were found
 if [ -z "$locator_entries" ]; then
-    echo "Error in ~/dds_scripts/update_fastdds_xml.sh: No Tailscale IP addresses found. \n    -> FastDDS XML file NOT updated!\n    -> Tailscale NOT available!"
+    echo "Warning by ~/dds_scripts/update_fastdds_xml.sh: TAILSCALE NOT AVAILABLE!"
 else
     ip_count=$(echo "$ip_addresses" | wc -w)
     debug_echo "$ip_count valid IP addresses found."
@@ -84,7 +84,7 @@ else
 fi
 
 
-# should look like this:
+# if debug=true, output should look like this:
 # user@SurfaceLS:~/dds_scripts$ ./update_fastdds_xml.sh 
 # Debug: Tailscale status output:
 # 100.82.37.41    surfacels            ai.lab.unibw@ linux   -
