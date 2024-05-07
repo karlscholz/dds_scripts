@@ -21,8 +21,8 @@ debug_echo "Debug: Tailscale status output:"
 debug_echo "$tailscale_output"
 debug_echo "-----------------------------------"
 
-# Extract IP addresses
-ip_addresses=$(echo "$tailscale_output" | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
+# Extract only Tailscale IP addresses
+ip_addresses=$(echo "$tailscale_output" | grep -oE '100\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 
 # Debug output for captured IP addresses
 debug_echo "Debug: Captured IP addresses:"
